@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background-color: #F0F3F8;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+.container {
+    margin: auto;
+    max-width: 1080px;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    flex-grow: 1;
+}
+
+.bg-svg {
+    position: absolute;
+    z-index: -1;
+}
+
+.leftdiv {
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.leftdiv h1 {
+    color: rgb(60, 74, 91);
+    font-size: 32px;
+    letter-spacing: -0.2px;
+    line-height: 40px;
+    font-weight: 700;   
+    margin-top: 0px;
+    font-weight: 600;
+    max-width: 450px;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 10;
+}
+h2 {
+    color: rgb(60, 74, 91);
+    font-size: 24px;
+    letter-spacing: -0.2px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.leftdiv p {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0px;
+    line-height: 28px;
+    color: rgb(104, 119, 141);
+    margin-top: 8px;
+    max-width: 440px;
+}
+
+.rightdiv {
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+form, .loginForm {
+    background-color: #fff;
+    width: 100%;
+    height: 80vh;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+p {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    color: rgb(104, 119, 141);
+    margin-top: 8px;
+}
+
+a {
+    font-weight: 600;
+    border-radius: 4px;
+    display: inline;
+    flex-direction: row;
+    color: rgb(73, 204, 104);
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.f-passwrod {
+    font-size: 16px;
+    display: block;
+}
+
+input {
+    background-color: transparent;
+    color: rgb(60, 74, 91);
+    font-family: proxima-nova;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    border: 0px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 12px 14px;
+    transition: background-color 0.3s ease-in-out;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+}
+
+.hkMNOF {
+    border-color: rgb(188, 202, 216);
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 2px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.phn {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+
+}
+
+label {
+    color: rgb(104, 119, 141);
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    line-height: 16px;
+    left: 8px;
+    position: absolute;
+    top: -6px;
+    margin: 0px;
+    padding: 0px 8px;
+    z-index: 1;
+    background-color: transparent;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+    z-index: 999;
+    background-color: #fff;
+}
+
+button, .submitbt {
+    align-items: center;
+    border-radius: 9999px;
+    border-width: 1px;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    gap: 8px;
+    justify-content: center;
+    padding: 9px 23px;
+    width: 100%;
+    background-color: rgb(73, 204, 104);
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    cursor: pointer;
+    pointer-events: all;
+    color: #fff;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #F0F3F8;
+    position: relative;
+    bottom: 0;
+}
+
+.footer a {
+    color: rgb(60, 74, 91);
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        position: static;
+        padding: 20px 0;
+    }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .leftdiv {
+        display: none;
+    }
+
+    .rightdiv {
+        width: 100%;
+    }
+
+    form, .loginForm {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .logo {
+        display: none;
+    }
+
+    .footer {
+        position: static;
+        padding: 20px 0;
+    }
+}
+

